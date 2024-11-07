@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_pro_multimedia/core/ui/values/app_values.dart';
 
 class TitleColumn extends StatelessWidget {
   final String mainText;
@@ -16,11 +17,11 @@ class TitleColumn extends StatelessWidget {
         children: [
           Text(
             mainText,
-            style: const TextStyle(fontSize: 24, color: Colors.white),
+            style: AppValues.basicTextStyle,
           ),
           Text(
             boldText,
-            style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.white),
+            style: AppValues.basicTextStyle.copyWith(fontWeight: FontWeight.bold),
           ),
         ],
       ),

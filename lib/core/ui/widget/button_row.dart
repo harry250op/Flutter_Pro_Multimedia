@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class ButtonRow extends StatelessWidget {
   final String previouslyStepText;
   final String nextStepText;
-  final Function function;
+  final VoidCallback function;
 
   const ButtonRow({super.key, required this.previouslyStepText, required this.nextStepText, required this.function});
   @override
@@ -20,17 +20,17 @@ class ButtonRow extends StatelessWidget {
               onPressed: null,
               child: Text(
                 previouslyStepText,
-                style: const TextStyle(fontSize: 24),
+                style: const TextStyle(fontSize: 20),
               )),
           ElevatedButton(
-            onPressed: () => function,
+            onPressed: function,
             style: ElevatedButton.styleFrom(
                 backgroundColor: const Color.fromRGBO(5, 104, 176, 1),
                 side: const BorderSide(color: Colors.white),
-                padding: const EdgeInsets.symmetric(horizontal: 30.0)),
+                padding: const EdgeInsets.symmetric(horizontal: 50.0, vertical: 8)),
             child: Text(
               nextStepText,
-              style: const TextStyle(fontSize: 24, color: Colors.white),
+              style: const TextStyle(fontSize: 20, color: Colors.white),
             ),
           )
         ],
